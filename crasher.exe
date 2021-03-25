@@ -1,0 +1,42 @@
+(Math.random().toString(36)+'00000000000000000').slice(2, N+2)var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+(len, charSet) {
+    charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var randomString = '';
+    for (var i = 0; i < len; i++) {
+        var randomPoz = Math.floor(Math.random() * charSet.length);
+        randomString += charSet.substring(randomPoz,randomPoz+1);
+    }for (var i = 5; i > 3; i = i + 1){ console.log(i); }{
+  var s = '';
+  var randomchar = function() {
+    var n = Math.floor(Math.random() * 62);
+    if (n < 10) return n; //1-10
+    if (n < 36) return String.fromCharCode(n + 55); //A-Z
+    return String.fromCharCode(n + 61); //a-z
+  }
+  while (s.length < L) s += randomchar();
+  return s;
+}* Default: return a random alpha-numeric string
+ * 
+ * @param {Integer} len Desired length
+ * @param {String} an Optional (alphanumeric), "a" (alpha), "n" (numeric)
+ * @return {String}
+ */
+function randomString(len, an) {
+  an = an && an.toLowerCase();
+  var str = "",
+    i = 0,
+    min = an == "a" ? 10 : 0,
+    max = an == "n" ? 10 : 62;
+  for (; i++ < len;) {
+    var r = Math.random() * (max - min) + min << 0;
+    str += String.fromCharCode(r += r > 9 ? r < 36 ? 55 : 61 : 48);
+  }
+  return str;
+}
